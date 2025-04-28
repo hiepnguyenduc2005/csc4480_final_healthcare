@@ -29,7 +29,6 @@
 
 -- Table PRESCRIPTIONS created.
 
-
 DROP TABLE Prescriptions;
 
 DROP TABLE Treatment_History;

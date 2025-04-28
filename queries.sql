@@ -108,3 +108,24 @@ SELECT
 FROM Doctor_Stats
 WHERE completed_appointments / total_appointments = 1;
 
+-- 11. Insert a new patient record
+INSERT INTO Patients (patient_id, first_name, last_name, email, phone, dob, gender, address)
+VALUES (999, 'Test', 'Patient', 'test.patient@example.com', '123-456-7890', TO_DATE('04-04-2005', 'DD-MM-YYYY'), 'Male', '800 Lancaster');
+
+-- 12. Insert a new appointment record
+INSERT INTO Appointments (appointment_id, patient_id, doctor_id, appointment_date, status)
+VALUES (999, 999, 1, TO_DATE('20-04-2024', 'DD-MM-YYYY'), 'Scheduled');
+
+-- 13. Delete a Canceled Appointment
+DELETE FROM Appointments
+WHERE status = 'Canceled'
+AND appointment_date < TO_DATE('10-04-2024', 'DD-MM-YYYY');
+
+-- 14. Alter Appointments table: Add a notes column
+ALTER TABLE Appointments
+ADD appointment_notes VARCHAR2(500);
+
+-- 15. Update existing appointment status
+UPDATE Appointments
+SET status = 'Completed'
+WHERE appointment_id = 2;
